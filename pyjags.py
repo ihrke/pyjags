@@ -24,12 +24,13 @@ import rpy2.robjects.numpy2ri
 rpy2.robjects.numpy2ri.activate()
 import rpy2.robjects as robj
 import pandas.rpy.common as com
+import sys, os
 
-
+rjags_coda_samples_dic_file=os.path.join(sys.prefix, 'R/rjags_coda_samples_dic.R')
 
 _R_init="""
 library(rjags)
-source('rjags_coda_samples_dic.R')
+source('{rjags_coda_samples_dic}')
 """
 
 _R_build_model="""
@@ -61,7 +62,7 @@ class Model(object):
         with open(self._model_fname, 'w') as f:
             f.write(modstr)
         with capture_output() as io:
-            robj.r(_R_init)
+            robj.r(_R_init.format(rjags_coda_samples_dic=rjags_coda_samples_dic_file))
         
         ## default conversion for list results in R-list (unnamed)
         data_keys=sorted(data.keys())

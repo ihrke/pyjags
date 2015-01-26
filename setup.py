@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
     name="pyjags",
-    version="dev",
+    version="0.0.1.dev0",
     author="Matthias Mittner",
     author_email="ihrke@github",
     description=(("Ugly, ugly hack to run jags from python using the rjags interface"
@@ -15,6 +15,7 @@ setup(
     keywords="jags bayes MCMC",
     url="http://github.com/ihrke/pyjags",
     py_modules=['pyjags'],
+    data_files=[('R', ['R/rjags_coda_samples_dic.R'])],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
