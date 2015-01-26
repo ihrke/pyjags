@@ -20,3 +20,12 @@ Requirements:
 - rjags (R package)
 - rpy2 (python package)
 - ipython (python package)
+
+
+install 
+-------
+(not really recommended)
+
+~~~~
+pip install git+git://github.com/ihrke/pyjags@master
+~~~~
