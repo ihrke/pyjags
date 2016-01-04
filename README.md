@@ -1,6 +1,8 @@
 pyjags
 ======
 
+**WARNING:** This is not the same project as [@tmiasko](https://github.com/tmiasko)'s [pyjags](https://github.com/tmiasko/pyjags) which uses JAGS directly instead of going through R. I guess this repo is superseded by @tmiasko's pyjags (though I haven't tested it yet).
+
 Ugly ass hell wrapper to access JAGS from python.
 It uses `rpy` to access `JAGS` via `R` (did I mention how ugly this is?).
 
